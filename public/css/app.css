@@ -1,0 +1,957 @@
+/*\
+ *  Constructor HTML
+ *  Creado			: 2015-10-04
+ *  Autor       : Fare
+ \*/
+
+
+/*  /////////////////////////////////////////  *\
+
+	$ NORMALIZE TAGS
+
+	\*  /////////////////////////////////////////  */
+
+	@font-face {
+		/*
+	    font-family: 'bebas_neueregular';
+	    src: url('../fonts/bebasneue-webfont.eot');
+	    src: url('../fonts/bebasneue-webfont.eot?#iefix') format('embedded-opentype'),
+	         url('../fonts/bebasneue-webfont.woff2') format('woff2'),
+	         url('../fonts/bebasneue-webfont.woff') format('woff'),
+	         url('../fonts/bebasneue-webfont.ttf') format('truetype'),
+	         url('../fonts/bebasneue-webfont.svg#bebas_neueregular') format('svg');
+	    font-weight: normal;
+	    font-style: normal;
+	    */
+	}
+
+	body {
+		background-color: white;
+	}
+
+
+	/* form */
+	tbody tr:nth-child(even),
+	tbody,
+	table{
+		border:0;
+		background-color: transparent;
+		margin: 0;
+	}
+
+	tbody th, tbody td{
+		padding: 0;
+	}
+
+	tr {
+		position: relative;
+	}
+
+	body{
+		line-height: normal;
+	}
+
+	p{
+		line-height: inherit;
+	}
+
+	img{
+		cursor: move;
+	}
+
+	select, input {
+		border:0;
+	}
+
+	img{
+		cursor: move;
+		max-width: inherit;
+		height: auto;
+	}
+
+
+/*  /////////////////////////////////////////  *\
+
+	$ TOOLS CLASS
+
+	\*  /////////////////////////////////////////  */
+
+	/* full */
+	html, body, .container {
+		width: 100%; height: 100%;
+	}
+
+	/* Ocultar */
+	.hide {
+		display: none !important;
+	}
+
+	/* flotar */
+	.float-left {
+		float: left;
+	}
+
+	.float-right {
+		float: left;
+	}
+
+	/* Corregir flotante */
+	.clearfix,
+	.clear-left,
+	.clear-right {
+		display: block;
+	}
+
+	.clearfix 	 { clear: both;  }		
+	.clear-left  { clear: left;  }		
+	.clear-right { clear: right; }
+
+	/* linea */
+	[class *= 'line'] {
+		margin: 0 auto;
+		display: inline-block;
+		vertical-align: middle;
+		border: 0;
+	}
+
+	.line {
+		background-color: white; 
+		width: 20px; height: 2px;
+	}
+
+	.line-red {
+		background-color: #ef2e2b; 
+		width: 100%; height: 1px;
+	}
+
+	/* opacidad */
+	.hidden  { opacity:0; }
+	.visible { opacity:1; }
+
+	/* texto enlace */
+	.text-link {
+		display: inline-block;
+		margin-bottom: 15px;
+		color: #931d5a;
+	}
+
+	.text-link:hover {
+		background-color: #FFD0D5;
+	}
+
+	/* go-top */
+	.go-top {
+		position: fixed; z-index: 2;
+		right: 20px; bottom: 20px;
+		display: block;
+		width: 70px; height: 70px;
+		border-radius: 50%;
+		background: url('../images/base/go-top.png') no-repeat center rgba(164, 66, 197, 1);
+		cursor: pointer;
+
+		-webkit-box-shadow: 2px 3px 10px 0px rgba(0,0,0,.3);
+		-moz-box-shadow: 2px 3px 10px 0px rgba(0,0,0,.3);
+		box-shadow: 2px 3px 10px 0px rgba(0,0,0,.3);
+	}
+
+
+
+
+
+
+/*  /////////////////////////////////////////  *\
+
+	$ BEM CLASS 
+
+	\*  /////////////////////////////////////////  */
+
+	.container {
+		overflow: hidden;
+		position: relative;
+		display: block;
+		width: 100%; height: 100%;
+	}
+
+	.scripts {
+		display: none;
+	}
+
+	.construct, 
+	.preview {
+		position: relative;
+		float: left;
+		height: 100%;
+	}
+	
+	.veladura{
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.5);
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		z-index: 999;
+	}
+
+	.veladura p{
+		display: block;
+		color: #ffffff;
+		text-align: center;
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		font-weight: bold;
+	}
+	
+	.logout{
+		position: absolute;
+		top: 0px;
+		right: 0px;
+		z-index: 1001;
+		width: 0;
+		height: 0;
+		border-top: 80px solid #ccc; 
+		border-left: 80px solid transparent;			
+
+	}
+
+	.logout a{
+		position: absolute;
+		top: -71px;
+		left: -36px;
+		width: 30px;
+		height: 30px;
+		background: url(../images/logout.png) no-repeat;
+		background-size: 100%;
+	}
+
+	/*---- SECTION :: CONSTRUCT ----*/
+	.construct {
+		padding-top: 80px; padding-bottom: 40px;
+		font-size: 16px;
+		color: white;
+		background-color: #212123;
+		width: 45%; 
+	}
+
+	.construct__title,
+	.construct__panel {
+		padding: 30px 40px 30px 50px;	
+		box-sizing: border-box;
+	}
+
+	.construct__title {			
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 80px;
+		font-size: 1.8em;
+		font-weight: bold;
+		background-color: rgb(86, 86, 86);
+	}
+
+	.construct__panel {
+		overflow-y: scroll;
+		width: 100%; height: 100%;
+	}
+	
+	/*---- PANEL ----*/
+	.panel {
+		margin-bottom: 30px;
+		padding: 25px 50px;
+		border: 1px dashed rgba(255,255,255,.4);
+	}
+
+	.panel__title {
+		display: block;
+		margin-bottom: 10px;
+	}
+
+	.panel__option {
+		margin-bottom: 0;
+		width: 100%; height: 40px;
+		font-size: 18px; font-weight: bold;
+		color: black;
+	}
+	
+	/* modificador */
+	.panel--cuerpo {
+		overflow: hidden;
+		padding-right: 120px;
+	}
+
+	.panel--cuerpo .panel__option {
+		float: left;
+	}
+
+	.panel--cuerpo .btn-agregar {
+		float: left;
+		margin: 0 -100px 0 10px;
+	}
+
+	/*---- SECTION :: PREVIEW ----*/
+	.preview {
+		padding-bottom: 40px;
+		width: 55%;
+	}
+
+	.preview .scrollbar-outer {
+		background-color: #E7E7E7;
+	}
+
+	.preview__panel	{
+		position: relative;
+		width: 100%; height: 100%;
+		background-color: white;
+		overflow-y: auto;
+		overflow-x: hidden;
+	}
+
+	
+	/* device base */
+	[data-device] {
+		position: absolute;
+		left: 50%; top: 50%;
+		padding: 5px;
+		box-sizing: content-box;
+		-webkit-transition: all .3s ease-in-out;
+		-o-transition: all .3s ease-in-out;
+		transition: all .3s ease-in-out;		
+	}
+
+	/* medidas para laptop */
+	[data-device ~= "laptop"] {
+		padding: 0;
+		left: 0%; top: 0%;
+		width: 100%; height: 100%;
+	}
+
+	/* medidas para iphone 4 */
+	[data-device ~= "iphone4"] {			
+		margin-left: -160px; margin-top: -240px;
+		width: 320px; height: 480px;
+	}
+
+	/* medidas para iphone 5 */
+	[data-device ~= "iphone5"] {			
+		margin-left: -160px; margin-top: -284px;
+		width: 320px; height: 568px;
+	}
+
+	[data-device ~= "iphone4"] .panelsito,
+	[data-device ~= "iphone5"] .panelsito {
+		display: none !important;
+		box-shadow: none;
+	}
+	
+
+	
+
+	
+	/*---- BOTONES ----*/
+	[class*='btn']{	
+		padding: .75em 1.5em;
+		font-size: 16px; 
+		font-weight: bold;
+		color: white;
+		background-color: gainsboro;
+		border: 0; 
+		border-radius: 4px;
+	}
+
+	[class*='btn']:hover,
+	[class*='btn']:focus {
+		background-color: silver;
+	}
+	
+		/*
+		.btn-generator-new,
+		.btn-generator {
+			position: relative;
+			top: 50%;
+			margin-top: -20px;		
+			color: white;
+			background-color: #3adb76;		
+			float: right;
+			margin-left: 10px
+		}
+		*/
+		
+		[ class *= 'btn-generator' ] {
+			position: absolute;
+			top: 0; right: 0;
+			display: block;
+			width: 80px; height: 80px;
+			background-color: #484848;
+			background-position: center;
+			background-repeat: no-repeat;
+			border-radius: 0;
+			text-indent: -9999999px;
+		}
+
+		.btn-generator {
+			top: 0; right: 0;
+			background-image: url('../images/ico-download.png');
+			background-size: 35px;
+		}
+
+		.btn-generator-duplicate {
+			top: 0; right: 81px;
+			background-image: url('../images/ico-duplicate.png');
+		}
+		
+		.btn-generator-new {
+			top: 0; right: 162px;
+			background-image: url('../images/ico-new.png');
+		}
+
+		[ class *= 'btn-generator' ]:hover,
+		[ class *= 'btn-generator' ]:focus {
+			color: white;
+			background-color: #565656;
+		}
+
+
+
+		.btn-new {
+			color: white;
+			background-color: #212121;
+		}
+		.btn-new:hover,
+		.btn-new:focus {
+			color: white !important;
+		}
+
+		.btn-new:hover,
+		.btn-new:focus {
+			background-color: #212123;
+		}
+
+		.btn-changeLink,
+		.btn-upload {
+			display: inline-block;
+			padding: .75em 1.5em;
+			font-size: 16px; 
+			font-weight: bold;
+			color: white;
+			background-color: #0078d2;
+			border: 0; 
+			border-radius: 4px;
+		}
+
+		.btn-changeLink:hover,
+		.btn-changeLink:focus,
+		.btn-upload:hover,
+		.btn-upload:focus {
+			color: white;
+			background-color: #212123;
+		}
+
+		.btn-agregar {
+			margin-top: 10px;
+			background-color: #01ACE4;
+		}
+
+		/*---- TOOLTIP ----*/
+		.tooltip {
+			position: absolute;
+			bottom: 0; left: 0;
+			display: none;
+			width: 0px; height: 0px;
+		}
+
+		.tooltip__msg {
+			position: absolute;
+			left: 0; bottom: 10px;
+			display: block;
+			margin-left: -75px;
+			width: 150px;
+			padding: 10px; 
+			background-color: black;
+			color: white;
+			font-size: 12px;
+			text-align: center;
+		}
+
+		.tooltip__msg::before {
+			content: '';
+			position: absolute;
+			top: 100%; left: 50%;
+			margin-left: -2.5px;
+			display: block;
+			border-width: 5px;
+			border-style: solid;
+			border-color: transparent;
+			border-top-color: black;
+		}
+
+		/*---- SECTION :: FOLDER ----*/
+		.folder {
+			position: fixed; z-index: 1000;
+			left: 0; top: 0;
+			width: 100%; height: 100%;
+			background-color: white;
+		}
+
+		.folder__middle {
+			position: absolute;
+			left: 0; right: 0; 
+			top : 0; bottom: 0;
+			display: block;
+			padding: 10px;
+			margin: auto;
+			max-width: 50%;
+			max-height: 500px;
+		}
+
+		.folder__input {
+			display: block;
+			padding: 10px 0 !important;
+			width: 100%;
+			height: auto;
+			font-size: 48px;
+			font-style: italic;
+			border: 0 !important;
+			border-bottom-width: 1px !important;
+			border-bottom-style: solid !important;
+			border-bottom-color: #d2d2d2 !important;
+			color: #212123;
+			background-color: transparent;
+			box-shadow: none;
+			margin-bottom: 30px;
+		}
+
+		.folder__input:focus {
+			color: #212123;
+			border-bottom-color: #9fe6fa;
+			box-shadow: none;
+		}
+
+		/*\ Placeholder
+		\*/	.folder__input::-webkit-input-placeholder { color: #212123; } 
+		.folder__input:-moz-placeholder { color: #212123; } /* Firefox 18-  */
+		.folder__input::-moz-placeholder { color: #212123; } /* Firefox 19+  */
+		.folder__input:-ms-input-placeholder { color: #212123; }
+
+		
+		/*---- PROGRESS ----*/
+		.progress{
+			border: 0px solid #0078d2;
+			height: 20px;
+			width: 0;
+			margin: 10px 0; 
+			background: url('../images/precarga.gif') left center;
+		}
+		
+		/*---- MODAL ----*/
+		.modal {
+			padding: 40px;
+		}	
+
+		.modal__title {
+			display: block;
+			padding-right: 50px;
+			margin-bottom: 20px;
+			font-size: 25px;
+			font-weight: bold;
+			line-height: 25px;
+			color: #0078d2;
+		}
+
+		.modal__note {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 12px;
+		}
+		
+		/*---- TITLES ----*/
+		.supertitle {
+			display: block;
+			padding-right: 50px;
+			margin-bottom: 20px;
+			font-size: 25px;
+			font-weight: bold;
+			line-height: 25px;
+			color: #0078d2;		
+		}
+
+
+/*
+	#doc {
+		display: block;
+		padding: 30px 0;
+	}
+	*/
+	
+
+
+	#doc,
+	#doc * {
+		outline:0px;
+	}
+
+	.scrollbar-outer {
+		position: relative;
+		width: 100%; height: 100%;
+		/*
+		overflow-y: auto;
+		overflow-y: overlay;  
+		overflow-x: hidden; 
+		*/
+	}
+
+	td {
+		position: relative;
+	}
+	
+	#cuerpo .contenedor {
+		width: 100%;
+	}
+
+	#cuerpo .contenedor > tbody > tr > td:hover {
+		-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+		-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+		box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+	}
+
+	#cuerpo .contenedor > tbody > tr > td:hover .panelsito {
+		display: block;
+	}
+	
+	#cuerpo .contenedor > tbody > tr > td::selection .editor{
+		display: block;
+	}
+
+	/* 
+	.panelsito {
+		position: absolute;
+		top: -30px;
+		left: 0px;
+		display: none;
+		width: 100%;
+		height: 30px;
+	}
+
+	.panelsito .removeTR {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+	}
+
+	.panelsito .moveUp,
+	.panelsito .moveDown {
+		position: absolute;
+		left: -30px; top: 30px;
+		display: block;
+		width: 30px; height: 30px;
+		background-color: blue;
+		color: white;
+		cursor: pointer;
+	}
+
+		.panelsito .moveUp + .moveDown {
+			top: 60px;
+		}
+		*/
+
+		.panelsito {
+			position: absolute; z-index: 10;
+			top: 0px;
+			left: 0px;
+			display: none;
+			width: 100%;
+			height: 0px;
+		}
+
+		.panelsito.is-active {
+			display: block;
+		}
+
+		.editor {
+			position: absolute;
+			top: -40px; left: 0;
+			display: none;
+			width: 100%; height: 40px;
+			background-color: white;
+			-webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+			-moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+			box-shadow: 0px 0px 15px 0px rgba(0,0,0,.2);
+
+		}
+
+
+
+		.editor.show{
+			display: block;
+		}
+
+
+		.editor [class *='editor__'] {
+			float: left;
+			display: block;
+			width: 12.5%; height: 100%;
+			cursor: pointer;
+		}
+
+		.editor [class *='editor__']:hover {
+			background-color: black;
+		}
+
+		.editor [class *='editor__'] + [class *='editor__'] {
+			/*border-left: 1px solid #E2E2E2;*/
+		}
+
+		.editor [class *='editor__'] + [class *='editor__']:before {
+			content: '';
+			display: block;
+			margin: 8px auto 0; 
+			width: 25px; height: 25px;
+			background-image: url('../images/panelsito-ico.png');
+			background-repeat: no-repeat;
+		}
+
+		.editor__size select {
+			text-align: right;
+			font-weight: bold;
+			background-color: transparent;
+			color: #58585a;
+		}
+		
+		.editor__bold:before    { background-position: center    0px; }
+		.editor__italic:before  { background-position: center  -25px; }
+		.editor__color:before   { background-position: center  -50px; }
+		.editor__link:before    { background-position: center  -75px; }
+		.editor__left:before    { background-position: center -100px; }
+		.editor__center:before  { background-position: center -125px; }
+		.editor__right:before   { background-position: center -150px; }
+
+
+		.move {
+			position: absolute;
+			left: -40px; top: 0;
+			display: block;
+			width: 40px;
+		}
+
+		.move [class *='move__'] {
+			overflow: hidden;
+			display: block;
+			width: 40px; height: 40px;
+			background-color: #58585a;
+			cursor: pointer;
+		}
+
+		.move [class *='move__']:hover {
+			background-color: black;
+		}
+
+		.move [class *='move__']:before {
+			content: '';
+			display: block;
+			margin: 7px auto; 
+			width: 25px; height: 25px;
+			background-image: url('../images/panelsito-move.png');
+			background-repeat: no-repeat;
+		}
+
+		.move__up:before    { background-position: center    0px; }
+		.move__down:before  { background-position: center  -25px; }
+
+		.remove {
+			position: absolute;
+			right: -40px; top: 0;
+			display: block;
+			width: 40px; height: 40px;
+			background-color: #58585a;
+			cursor: pointer;
+		}
+
+		.remove:hover {
+			background-color: black;
+		}
+
+		.remove:before {
+			content: '';
+			display: block;
+			margin: 7px auto; 
+			width: 25px; height: 25px;
+			background-image: url('../images/panelsito-move.png');
+			background-repeat: no-repeat;
+			background-position: center  -50px;
+		}
+
+
+		.paletaBBVA {
+			background-color: white;
+		}
+
+
+		/* toolbar */
+		.copy,
+		.toolbar {
+			position: absolute;
+			bottom: 0; left: 0;
+			display: block;
+			width: 100%; height: 40px;
+			padding: 0px 50px;
+			-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+			-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+		}
+
+		.copy {
+			padding-top: 5px;
+			background-color: #484848;
+		}
+
+		.toolbar {
+			background-color: white;
+		}
+		
+		/* device */
+		.device-mode {
+			margin: 0;
+			text-align: center;
+		}
+
+		.device-mode li {
+			overflow: hidden;
+			display: inline-block;
+			position: relative;
+		}
+
+		.device-mode li:first-child {
+			padding: 0 10px;
+		}
+
+		.device-mode li.is-active {
+			background-color: white;
+		}
+
+		.device-mode li:hover a,
+		.device-mode li.is-active a {
+			top: -40px;
+			cursor: pointer;			
+		}
+
+		.device-mode a{
+			position: relative;
+			left: 0; top: 0;
+			margin: 0 auto;
+			display: block;
+			width:40px; height:80px; 
+			background-image: url('../images/iconos-device.png'); 
+			background-repeat: no-repeat;
+		}
+
+		.device-mode a.laptop  { background-position:   0px 0px }
+		.device-mode a.iphone4 { background-position: -40px 0px }
+		.device-mode a.iphone5 { background-position: -80px 0px }
+
+		/* rendering */
+		.rendering {
+			position: relative;
+		}
+
+		.rendering::before {
+			content: 'renderizando';
+			position: absolute; z-index: 10;
+			left: 50%; top: 50%;
+			display: block;
+			padding: 10px 10px 10px 40px; 
+			margin-left: -60px; margin-top: -16px; 
+			width: 70px;
+			font-size: 10px;
+			color: #0caee4;
+			background: url('../images/rendering.gif') no-repeat 10px center white; 
+			-webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+			-moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.18);
+
+			-webkit-transition: opacity .5s ease-in-out;
+			-o-transition: opacity .5s ease-in-out;
+			transition: opacity .5s ease-in-out;
+
+			opacity: 0; height: 0;
+		}
+
+		.rendering.is-process::before {
+			opacity: 1; height: auto;
+		}
+
+		.rendering::after {
+			content: '';
+			position: absolute; z-index: 9;	
+			top: 0;; left: 0;		
+			display: block;
+			width: 100%; 
+			background-color: rgba(255,255,255,1);
+
+			-webkit-transition: opacity .5s ease-in-out;
+			-o-transition: opacity .5s ease-in-out;
+			transition: opacity .5s ease-in-out;
+
+			opacity: 0; height: 0%;
+		}
+
+		.rendering.is-process::after {
+			opacity: 1; height: 100%;
+		}
+		
+.panel--cuerpo .btn-agregar {
+    background-color: #fafafa !important;
+    color: #212123 !important;
+}
+
+
+
+
+
+
+*:focus {
+    outline: none !important;
+}
+
+.sp-replacer.sp-light{
+	position: absolute;
+    left: 0;
+    z-index: 2;
+    top: 0;
+}
+
+.btn-picker-color{
+	    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 80px;
+    height: 80px;
+    background-color: #484848;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 0;
+    text-indent: -9999999px;
+    top: 0;
+    right: 243px;
+}
+.btn-picker-color:hover{
+	background-color: #565656;
+}
+.btn-picker-color .sp-replacer.sp-light{
+	left: 20px;
+    top: 25px;
+    border: 0;
+}
+.recuerda-shortcode{
+	    background: #e3e3e3;
+    display: inline-block;
+    padding: 12px 20px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}

@@ -1,0 +1,117 @@
+﻿/* glue: 0.9.4 hash: e937e1a146 */
+        .btn-nuevoscanjes,
+.btn-reposicion,
+.btn-coleccionable,
+.btn-ingresar,
+.btn-guardar,
+.btn-buscar,
+.logo,
+.btn-volver,
+.icon-skybluye,
+.icon-blue,
+.btn-return,
+.logout,
+.icon-gift {
+            /* background-image: url('../img/shapes.png?e937e1a146'); */
+            background-repeat: no-repeat;
+        }
+        
+        .btn-nuevoscanjes {
+            background-position: -10px -10px;
+            width: 275px;
+            height: 60px;
+        }
+        
+        .btn-reposicion {
+            background-position: -10px -90px;
+            width: 265px;
+            height: 70px;
+        }
+        
+        .btn-coleccionable {
+            background-position: -10px -180px;
+            width: 265px;
+            height: 70px;
+        }
+        
+        .btn-ingresar {
+            background-position: -305px -10px;
+            width: 210px;
+            height: 50px;
+        }
+        
+        .btn-guardar {
+            background-position: -305px -80px;
+            width: 210px;
+            height: 50px;
+        }
+        
+        .btn-buscar {
+            background-position: -305px -150px;
+            width: 210px;
+            height: 50px;
+        }
+        
+        .logo {
+            background-position: -10px -270px;
+            width: 190px;
+            height: 95px;
+        }
+        
+        .btn-volver {
+            background-position: -305px -220px;
+            width: 115px;
+            height: 25px;
+        }
+        
+        .icon-skybluye {
+            background-position: -220px -270px;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .icon-blue {
+            background-position: -290px -270px;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .btn-return {
+            background-position: -360px -270px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        .logout {
+            background-position: -420px -270px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        .icon-gift {
+            background-position: -470px -270px;
+            width: 30px;
+            height: 30px;
+        }
+        
+        @media screen and (-webkit-min-device-pixel-ratio: 1.0), screen and (min--moz-device-pixel-ratio: 1.0), screen and (-o-min-device-pixel-ratio: 100/100), screen and (min-device-pixel-ratio: 1.0), screen and (min-resolution: 1.0dppx) {
+            .btn-nuevoscanjes,
+    .btn-reposicion,
+    .btn-coleccionable,
+    .btn-ingresar,
+    .btn-guardar,
+    .btn-buscar,
+    .logo,
+    .btn-volver,
+    .icon-skybluye,
+    .icon-blue,
+    .btn-return,
+    .logout,
+    .icon-gift {
+                /* background-image: url('../img/shapes.png?e937e1a146'); */
+                -webkit-background-size: 525px 375px;
+                -moz-background-size: 525px 375px;
+                background-size: 525px 375px;
+            }
+        }
+        

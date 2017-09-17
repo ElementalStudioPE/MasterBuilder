@@ -1,0 +1,39 @@
+%!Adobe-FontList 1.14
+%Locale:0x280a
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\Proyectos\cms angrybird\Font\stagsans-medium_0-webfont.eot
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\Proyectos\cms angrybird\Font\stagsans-medium_0-webfont.svg
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:StagSans-Medium
+FamilyName:Stag Sans
+StyleName:Medium
+FullName:Stag Sans Medium Regular
+MenuName:Stag Sans Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:D:\Proyectos\cms angrybird\Font\stagsans-medium_0-webfont.ttf
+DataFormat:sfntData
+FileLength:57684
+WeightClass:500
+WidthClass:5
+AngleClass:0
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Invalid
+OutlineFileName:D:\Proyectos\cms angrybird\Font\stagsans-medium_0-webfont.woff
+%EndFont
+
